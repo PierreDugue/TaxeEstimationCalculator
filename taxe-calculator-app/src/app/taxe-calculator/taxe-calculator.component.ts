@@ -34,6 +34,11 @@ export class TaxeCalculatorComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.datasForm.setValue({
+      superAnnuation: 9.5,
+      gross: '',
+      isIncludeSA: false
+    })
     this.calculatedAmounts = new calculatedAmounts();
   }
 
