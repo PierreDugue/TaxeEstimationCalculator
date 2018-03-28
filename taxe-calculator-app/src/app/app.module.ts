@@ -19,6 +19,6 @@ import { TaxeCalculatorService } from './services/taxe-calculator.service';
     MatCheckboxModule
   ],
   providers: [TaxeCalculatorService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
