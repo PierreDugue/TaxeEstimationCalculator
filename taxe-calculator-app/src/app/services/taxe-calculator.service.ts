@@ -47,9 +47,13 @@ export class TaxeCalculatorService {
    */
   netAmountCalc(userDatas: userData, withSA: boolean): number {
     if (withSA) {
-      return userDatas.gross - this.taxCalc(userDatas.gross) + this.superAnnuationCalc(userDatas);
+      return userDatas.gross - this.taxValueCalculation(userDatas) + this.superAnnuationCalc(userDatas);
     } else {
-      return userDatas.gross - this.taxCalc(userDatas.gross);
+      if (userDatas.isIncludeSA) {
+        return userDatas.gross - this.superAnnuationCalc(userDatas) - this.taxValueCalculation(userDatas);
+      } else {
+        return userDatas.gross - this.taxValueCalculation(userDatas);
+      }
     }
   }
 

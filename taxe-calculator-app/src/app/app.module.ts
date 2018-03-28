@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { TaxeCalculatorComponent } from './taxe-calculator/taxe-calculator.component';
 import { TaxeCalculatorService } from './services/taxe-calculator.service';
 
@@ -14,7 +14,9 @@ import { TaxeCalculatorService } from './services/taxe-calculator.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule, 
+    ReactiveFormsModule,
+    MatCheckboxModule
   ],
   providers: [TaxeCalculatorService],
   bootstrap: [AppComponent]
