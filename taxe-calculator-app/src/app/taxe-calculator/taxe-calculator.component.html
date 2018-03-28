@@ -2,7 +2,7 @@
   <form class="blockValue" (ngSubmit)="onSubmit()" [formGroup]="datasForm">
     <div class="form-group">
       <label>Superannuation : </label>
-      <input class="form-control" formControlName="superAnnuation" required/> %
+      <input class="formInput" class="form-control" formControlName="superAnnuation" required/> %
       <ul>
         <li class="errorValidation" *ngIf="datasForm.get('superAnnuation').hasError('required')">Superannuation is required</li>
         <li class="errorValidation" *ngIf="datasForm.get('superAnnuation').hasError('isNan')">Superannuation must be a number</li>
@@ -11,7 +11,7 @@
     </div>
     <div class="form-group">
       <label>Gross amount : </label>
-      <input class="form-control" formControlName="gross" required/>
+      <input class="formInput" class="form-control" formControlName="gross" required/>
       <ul>
         <li class="errorValidation" *ngIf="datasForm.get('gross').hasError('required')">Gross amount is required</li>
         <li class="errorValidation" *ngIf="datasForm.get('gross').hasError('isNan')">Gross amount must be a number</li>

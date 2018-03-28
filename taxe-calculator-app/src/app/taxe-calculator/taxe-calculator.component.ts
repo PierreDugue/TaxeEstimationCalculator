@@ -13,9 +13,9 @@ import { calculatedAmounts } from '../models/calculatedAmounts-model';
 })
 export class TaxeCalculatorComponent implements OnInit {
 
-  private calculatedAmounts: calculatedAmounts;
+  public calculatedAmounts: calculatedAmounts;
   private userDatas: userData;
-  private datasForm: FormGroup;
+  public datasForm: FormGroup;
   private superAnnuationCtrl: FormControl;
   private grossCtrl: FormControl;
   private isIncludeSACtrl: FormControl;
