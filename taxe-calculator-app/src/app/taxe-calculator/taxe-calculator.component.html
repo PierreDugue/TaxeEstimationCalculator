@@ -9,9 +9,9 @@
   </li>
   <li>
     <label>Include superannuation</label>
-    <input (change)="includeSA = !includeSA;" type="checkbox"/>
+    <input (change)="userDatas.isIncludeSA = !userDatas.isIncludeSA;" type="checkbox"/>
   </li>
-  <div *ngIf="includeSA">Included</div>
+  <div *ngIf="isIncludeSA">Included</div>
   {{userDatas?.superAnnuation}}
   {{userDatas?.gross}}
 </ul>
@@ -19,7 +19,6 @@
 
 <label>SA amout</label>{{calculatedAmounts?.superAnnuationAmount}}
 <label>Gross amount</label>{{calculatedAmounts?.grossAmount}}
-<label>Gross superannuation</label>{{calculatedAmounts?.grossSA}}
 <label>Tax</label>{{calculatedAmounts?.tax}}
 <label>Net amount</label>{{calculatedAmounts?.netAmount}}
 <label>Net superannuation</label>{{calculatedAmounts?.netSA}}

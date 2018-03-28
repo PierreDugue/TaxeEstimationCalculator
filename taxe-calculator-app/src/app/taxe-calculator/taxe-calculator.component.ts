@@ -19,6 +19,7 @@ export class TaxeCalculatorComponent implements OnInit {
   ngOnInit() { 
     this.calculatedAmounts = new calculatedAmounts();
     this.userDatas = new userData();
+    this.userDatas.isIncludeSA = false;
   }
   
   public calc(){
