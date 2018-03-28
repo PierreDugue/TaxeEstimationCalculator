@@ -3,6 +3,7 @@
     <label>Superannuation : </label>
     <input class="form-control" formControlName="superAnnuation" required/> %
     <div *ngIf="datasForm.get('superAnnuation').hasError('required')">Superannuation is required</div>
+    <div *ngIf="datasForm.get('superAnnuation').hasError('isNan')">Superannuation must be a number</div>
     <div *ngIf="datasForm.get('superAnnuation').hasError('minValue')">
       Superannuation must be greater than 9.5% or equal</div>
   </div>
@@ -10,6 +11,7 @@
     <label>Gross amount : </label>
     <input class="form-control" formControlName="gross" required/>
     <div *ngIf="datasForm.get('gross').hasError('required')">Gross amount is required</div>
+    <div *ngIf="datasForm.get('gross').hasError('isNan')">Gross amount must be a number</div>
     <div *ngIf="datasForm.get('gross').hasError('minValue')">
       Gross amount must be greater than 0</div>
   </div>

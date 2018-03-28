@@ -23,8 +23,8 @@ export class TaxeCalculatorComponent implements OnInit {
   constructor(private taxeCalculatorService: TaxeCalculatorService,
     private formBuilder: FormBuilder) {
 
-    this.superAnnuationCtrl = formBuilder.control('', Validators.compose([Validators.required, this.minValue(9.5)]));
-    this.grossCtrl = formBuilder.control('', Validators.compose([Validators.required, this.minValue(1)]));
+    this.superAnnuationCtrl = formBuilder.control('', Validators.compose([Validators.required, this.isNumber(), this.minValue(9.5)]));
+    this.grossCtrl = formBuilder.control('', Validators.compose([Validators.required, this.isNumber(), this.minValue(1)]));
 
     this.datasForm = this.formBuilder.group({
       superAnnuation: this.superAnnuationCtrl,
@@ -51,6 +51,17 @@ export class TaxeCalculatorComponent implements OnInit {
       const input = control.value, isValid = input < value;
       if (isValid) {
         return { 'minValue': { value } };
+      } else {
+        return null;
+      }
+    };
+  }
+
+  isNumber(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } => {
+      const input = control.value, isValid = isNaN(input);
+      if (isValid) {
+        return { 'isNan': { input } };
       } else {
         return null;
       }

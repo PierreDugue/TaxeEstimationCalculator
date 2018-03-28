@@ -24,11 +24,20 @@ describe('TaxeCalculatorService', () => {
     expect(calculatorService).toBeTruthy();
   });
 
-  it('should return 5000', () => {
+  it('superAnnuationcalc should return 5000', () => {
     expect(calculatorService.superAnnuationCalc(this.datas)).toBe(5000);
   });
 
-  it('should return 5000', () => {
+  it('taxCalc should return 7497', () => {
     expect(calculatorService.taxCalc(50000)).toBe(7497);
   });
+
+  it('grossAmount should return 55000', () => {
+    expect(calculatorService.grossAmount(this.datas)).toBe(55000);
+  });
+
+  it('netAmountCalc should return 42503', () => {
+    expect(calculatorService.netAmountCalc(this.datas, false)).toBe(42503);
+  });
+
 });
